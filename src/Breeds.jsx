@@ -1,10 +1,13 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
 import { getDogsBreeds } from './ForDogs'
-
+import UserContext from './UserContext'
 
 export function Breeds({yntrvacBreeds}){
     const [dogBreed, setDogBreed] = useState([])
     const [selectedBreeds, setSelectedBreeds] = useState([])
+
+    const {isDarkMode} = useContext(UserContext)
+
 
     useEffect(() => {
         const randomPage = Math.round(Math.random() * 34)
@@ -31,11 +34,11 @@ export function Breeds({yntrvacBreeds}){
 
 
     return(
-        <div className="rounded-xl flex  gap-4 justify-center bg-green-700 p-8 border-5 border-red-700 w-full">
+        <div className="text-black rounded-xl flex  gap-4 justify-center bg-green-700 p-8 border-5 w-full">
         {
             dogBreed.map((el) => {
                 return (
-                    <div onClick={() => forSelectedBreeds(el.id)} className={`${selectedBreeds.includes(el.id) ?  "bg-white text-green-700" : ""}  p-3 border-4 rounded-xl text-white transition hover:opacity-20 hover:cursor-pointer`} key={el.id}>
+                    <div onClick={() => forSelectedBreeds(el.id)} className={`${selectedBreeds.includes(el.id) ?  "bg-white text-black" : ""} ${isDarkMode ? " border-black text-black" : ""} p-3 border-4 rounded-xl text-white transition hover:opacity-20 hover:cursor-pointer`} key={el.id}>
                         <p>{el.name}</p>
                     </div>
                 )
