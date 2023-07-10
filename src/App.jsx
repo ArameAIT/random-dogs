@@ -5,9 +5,14 @@ import { Dogs } from './Dogs'
 import UserContext from './UserContext'
 import DarkMode from './DarkMode'
 
+import Favorites from './Favorites'
+import Pages from './Pages/Pages'
+
+
+
 function App() {
-  const [forbreeds, setForBreeds] = useState([])
   const [isDarkMode, setIsDarkMode] = useState(true)
+
 
   const forContext = {
     isDarkMode,
@@ -15,13 +20,12 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={forContext}>
-      <div className={`${isDarkMode ? "bg-black" : "" } font-serif flex justify-center items-center flex-col p-4 w-full`} >
-        <DarkMode/>
-        <Breeds yntrvacBreeds={setForBreeds} />
-        <Dogs dogBreeds={forbreeds} />
-      </div>
-    </UserContext.Provider>
+    <>
+      <UserContext.Provider value={forContext}>
+
+        <Pages />
+      </UserContext.Provider>
+    </>
   )
 }
 
