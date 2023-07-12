@@ -20,7 +20,7 @@ function DarkMode() {
                 <Link to={`/Fav`}>Favorites</Link>
             </div>
             <div className='bg-inherit w-[100px] cursor-pointer'>
-
+                
                     <img src={isDarkMode ? "/4883637.png" : "/6559240.png"} onClick={poxeluHamar}/>
             </div>
         </div>

@@ -22,7 +22,6 @@ function App() {
   return (
     <>
       <UserContext.Provider value={forContext}>
-
         <Pages />
       </UserContext.Provider>
     </>

@@ -5,11 +5,12 @@ import { Outlet } from 'react-router-dom'
 
 function MainLayout() {
 
-    const {isDarkMode} = useContext(UserContext)
+  const { isDarkMode } = useContext(UserContext)
+  
   return (
-    <div className={`${isDarkMode ? "bg-black" : "" } font-serif flex justify-center items-center flex-col p-4 w-full`}>
-        <DarkMode/>
-        <Outlet/>
+    <div className={`${isDarkMode ? "bg-black" : ""} font-serif flex justify-center items-center flex-col p-4 w-full`}>
+      <DarkMode />
+      <Outlet />
     </div>
   )
 }
