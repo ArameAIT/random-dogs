@@ -6,6 +6,7 @@ import {
 import MainPage from './MainPage';
 import Favorites from '../Favorites';
 import MainLayout from './MainLayout';
+import TodosPage from './TodosPage';
 
 
 const router = createBrowserRouter([
@@ -18,8 +19,12 @@ const router = createBrowserRouter([
                 element: <MainPage />
             },
             {
-                path: "/Fav",
+                path: "Fav",
                 element: <Favorites />
+            },
+            {
+                path: "todos",
+                element: <TodosPage/>
             }
         ]
     }
